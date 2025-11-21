@@ -1,0 +1,1 @@
+Get-Content 'src\pages\Home.tsx' | Select-Object -Index (150..205)
