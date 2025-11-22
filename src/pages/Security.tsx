@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Shield, Camera, Lock, Users, Heart, Palmtree } from 'lucide-react';
 import ContactForm from '../components/ContactForm';
+import communityImg from '../assets/images/community-img.png';
 
 function Security() {
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -210,7 +211,7 @@ function Security() {
             <div className="scroll-fade-in">
               <div className="relative h-[500px] rounded-2xl overflow-hidden mirror-reflection">
                 <img
-                  src="https://images.pexels.com/photos/2166711/pexels-photo-2166711.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                  src={communityImg}
                   alt="Happy community gathering"
                   className="w-full h-full object-cover"
                 />
