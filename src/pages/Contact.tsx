@@ -246,7 +246,7 @@ function Contact() {
           </div>
           <div className="mt-8 pt-8 border-t border-white/10">
             <p className="text-gray-500 text-sm">
-              © 2024 Baja Legacy Development. All rights reserved.
+              © {new Date().getFullYear()} Baja Legacy Development. All rights reserved.
             </p>
           </div>
         </div>
