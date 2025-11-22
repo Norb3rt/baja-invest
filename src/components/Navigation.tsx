@@ -1,4 +1,4 @@
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Palmtree } from 'lucide-react';
 import { useState } from 'react';
 
 type Page = 'home' | 'homes' | 'security' | 'pricing' | 'contact';
@@ -32,19 +32,21 @@ function Navigation({ currentPage, onNavigate, mobileMenuOpen, setMobileMenuOpen
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled || mobileMenuOpen 
-          ? 'glass-card-strong backdrop-blur-xl' 
-          : 'bg-gradient-to-b from-black/40 to-transparent'
-      }`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled || mobileMenuOpen
+        ? 'glass-card-strong backdrop-blur-xl'
+        : 'bg-gradient-to-b from-black/40 to-transparent'
+        }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <button
-              onClick={() => onNavigate('home')}
-              className="text-2xl font-bold text-gradient-gold tracking-wider hover:scale-110 transition-transform duration-300 relative group"
+              onClick={() => handleNavigate('home')}
+              className="flex items-center space-x-3 text-2xl tracking-wider hover:scale-105 transition-transform duration-300 group focus:outline-none"
             >
-              BAJA LEGACY
-              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-amber-400 to-rose-400 scale-x-0 group-hover:scale-x-100 transform origin-left transition-transform duration-300" />
+              <Palmtree className="h-8 w-8 text-amber-400 group-hover:text-amber-300 transition-colors duration-300" />
+              <div className="flex flex-col items-start -space-y-2">
+                <span className="font-extrabold text-white">BAJA</span>
+                <span className="font-light text-amber-400">LEGACY</span>
+              </div>
             </button>
 
             <div className="hidden md:flex items-center space-x-1">
@@ -52,17 +54,15 @@ function Navigation({ currentPage, onNavigate, mobileMenuOpen, setMobileMenuOpen
                 <button
                   key={item.page}
                   onClick={() => handleNavigate(item.page)}
-                  className={`px-4 py-2 text-sm font-medium tracking-wide transition-all duration-300 relative group rounded-lg ${
-                    currentPage === item.page
-                      ? 'text-amber-400'
-                      : 'text-white hover:text-amber-300'
-                  }`}
+                  className={`px-4 py-2 text-sm font-medium tracking-wide transition-all duration-300 relative group rounded-lg ${currentPage === item.page
+                    ? 'text-amber-400'
+                    : 'text-white hover:text-amber-300'
+                    }`}
                 >
                   {item.label}
                   <span
-                    className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-amber-400 to-rose-400 transform origin-left transition-transform duration-300 rounded-full ${
-                      currentPage === item.page ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
-                    }`}
+                    className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-amber-400 to-rose-400 transform origin-left transition-transform duration-300 rounded-full ${currentPage === item.page ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                      }`}
                   />
                 </button>
               ))}
@@ -95,11 +95,10 @@ function Navigation({ currentPage, onNavigate, mobileMenuOpen, setMobileMenuOpen
               <button
                 key={item.page}
                 onClick={() => handleNavigate(item.page)}
-                className={`block w-full text-left px-6 py-4 text-lg font-medium transition-all duration-300 border-b border-white/5 hover:border-amber-400/30 last:border-b-0 ${
-                  currentPage === item.page
-                    ? 'text-amber-400 bg-gradient-to-r from-amber-400/10 to-transparent'
-                    : 'text-white hover:text-amber-300 hover:bg-white/5'
-                }`}
+                className={`block w-full text-left px-6 py-4 text-lg font-medium transition-all duration-300 border-b border-white/5 hover:border-amber-400/30 last:border-b-0 ${currentPage === item.page
+                  ? 'text-amber-400 bg-gradient-to-r from-amber-400/10 to-transparent'
+                  : 'text-white hover:text-amber-300 hover:bg-white/5'
+                  }`}
                 style={{ animationDelay: `${idx * 50}ms` }}
               >
                 <div className="flex items-center justify-between">
